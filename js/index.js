@@ -1,5 +1,6 @@
 const btn = document.querySelector('#menu-btn');
 const menu = document.querySelector('.menu');
+const main = document.querySelector('.main');
 const detalles = document.querySelector('.detalle');
 btn.addEventListener('click', e=>{
 	menu.classList.toggle("menu-collapsed");
