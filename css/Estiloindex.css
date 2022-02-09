@@ -1,54 +1,305 @@
-/*nav ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	width: 25%;
-	background-color: #343232;
-	position: fixed;
-	height: 100%;
-	overflow: auto;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    margin-left: 50px;
+}
+
+.body-expanded{
+    margin-left: 200px;
+}
+
+.main-container{
+ background-color: black;
+}
+
+.menu{
+    background-color: rgb(52,52,52);
+    color: white;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+
+/* HEADER */
+
+.menu #header{
+    box-sizing: border-box;
+    border-bottom: solid 1px rgb(23,23,23);
+}
+
+.menu #header #title{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.menu #header #title, .menu #header #menu-btn{
+    vertical-align: middle;
+}
+
+.menu #header #menu-btn{
+    display: inline-block;
+    padding: 10px;
+    width: 50px;
+    box-sizing: border-box;
+}
+
+.menu #header #menu-btn:hover{
+    cursor: pointer;
+}
+
+/*.menu #header #menu-btn .btn-hamburger{
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    margin:  5px 0;
 }*/
 
-/*.icon-bar {
-  width: 90px;
-  background-color: #555;
+
+
+
+/* PROFILE */
+
+.menu #profile{
+    /*border-bottom: solid 1px rgb(23,23,23);*/
+    /*padding: 10px 0;*/
+    text-align: center;
 }
 
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 36px;
+.menu #profile #photo{
+    /*background-color: red;*/
+    box-sizing: border-box;
+    /*padding: 10px;
+    margin: 0 auto;*/
 }
 
-.icon-bar a:hover {
-  background-color: #000;
-}*/
-
-.menu {
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: #343232;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+.menu #profile #photo img{
+    border-radius: 50%;
+    width: 50%;
 }
 
-.menu a {
-  display: block;
-  color: white;
-  padding: 16px;
-  text-decoration: none;
+.menu #profile #photo, #sidemenu #profile #name{
+    /*font-size: 24px;*/
+    /*padding: 10px 0;*/
+    overflow: hidden;
 }
 
-.menu a.active {
-  background-color: #04AA6D;
-  color: white;
+/*ITEM*/
+
+.menu #menu-items{
+    overflow: hidden
 }
 
-.menu a:hover:not(.active) {
-  background-color: #555;
+.menu #menu-items .item{
+    border-top: solid 1px rgb(23,23,23);
+    width: 300px;
+}
+
+.menu #menu-items .item a:hover > .title ,.menu #menu-items .item a:hover > .icon{
+    color: #56F3FF;
+}
+
+
+.menu #menu-items .item .icon{
+    display: inline-block;
+}
+
+.menu #menu-items .item .icon, .menu #menu-items .item .title{
+    font-size: 14px;
+    vertical-align: middle;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.menu #menu-items .item a{
+    display: block;
+}
+
+.menu #menu-items .item a:hover{
+    background-color: #747C6E;
+}
+
+.menu #menu-items .item .icon{
+    box-sizing: border-box;
+     padding: 10px;
+     width: 50px;
+}
+
+ .menu #menu-items .item .icon img{
+     width: 100%;
+}
+
+.menu #menu-items .item .title{
+     padding: 10px 0;
+}
+
+/* SEPARADOR */
+
+.menu #menu-items .item .separator{
+     height: 1px;
+    border-bottom: solid 1px rgb(23,23,23);
+    margin: 15px 0;
+}
+
+/* ESTILO EXPANDIR */
+
+.menu-expanded{
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-expanded #header #title{
+    display: inline-block;
+    width: calc(100% - 50px);
+    margin-right: -5px;
+    padding: 10px;
+}
+
+.menu-expanded #header #title span{
+    width: calc(300px - 50px - 5px);
+    overflow: hidden;
+    display: inline-block;
+}
+
+.menu-expanded #menu-items .item{
+    text-align: center;
+}
+
+.menu-expanded #profile #photo{
+    width: 200px;
+}
+
+.menu-expanded #profile #name{
+    width: 100%;
+}
+
+/* COLAPSADO */
+
+.menu-collapsed{
+    width: 50px;
+}
+
+.menu-collapsed #header #title{
+    padding: 0;
+    margin: 0;
+}
+
+.menu-collapsed #header #menu-items .title{
+    display: none;
+}
+
+.menu-collapsed #profile #name{
+    display: none;
+}
+
+.menu-collapsed .item{
+    width: 100px;
+}
+
+
+.menu #header #title #menu-btn span{
+    border-radius: 5px;
+    background: white;
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    height: 2px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.menu #header #title #menu-btn:hover > span{
+    background: #FBE3C1;
+}
+
+
+.menu #header #title .open .top-line{
+    animation-name: top-line-animation;
+}
+
+.menu #header #title .open .middle-line{
+    animation-name: middle-line-animation;
+}
+
+.menu #header #title .open .bottom-line{
+    animation-name: bottom-line-animation;
+}
+
+.menu #header #title .top-line{
+    animation-name: top-line-animation-close;
+}
+
+.menu #header #title .middle-line{
+    animation-name: middle-line-animation-close;
+}
+
+.menu #header #title .bottom-line{
+    animation-name: bottom-line-animation-close;
+}
+
+@keyframes top-line-animation{
+    50%, 100%{
+        margin: 0 auto;
+        transform: translateY(2px) rotate(-45deg);
+    }
+}
+
+@keyframes bottom-line-animation{
+    50%, 100%{
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+}
+
+@keyframes middle-line-animation{
+    20%, 100%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes top-line-animation-close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(2px) rotate(-45deg);
+    }
+
+    50%, 100%{
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes bottom-line-animation-close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+
+    50%, 100%{
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes middle-line-animation-close{
+    0%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+
+    20%, 100%{
+        margin: 0 auto;
+        width: 60%;
+        opacity: 1;
+    }
 }
