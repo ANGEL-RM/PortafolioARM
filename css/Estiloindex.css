@@ -12,7 +12,7 @@ body{
 .fondotrasparente{
     position: fixed;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     background-image: linear-gradient(to right, #0F0F0F, #484646, #0F0F0F);
     opacity: 0.7;
     z-index: -1;
@@ -20,10 +20,6 @@ body{
 
 .fondotrasparente #particles-js{
     height: 100%!important;
-}
-
-.info-content{
-    color: white;
 }
 
 .body-expanded{
@@ -114,10 +110,10 @@ body{
     overflow: hidden
 }
 
-.menu #menu-items .item{
+/* .menu #menu-items .item{ */
     /*border-top: solid 1px rgb(23,23,23);*/
     /*width: 300px;*/
-}
+/* } */
 
 .menu #menu-items .item a:hover > .title ,.menu #menu-items .item a:hover > .icon{
     color: #56F3FF;
@@ -323,3 +319,130 @@ body{
         opacity: 1;
     }
 }
+
+.main{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    color: white;
+    word-wrap: break-word;
+    display: flex;
+    /* 
+    justify-content: center; */
+}
+
+.main .texthola{
+    position: relative;
+    top: 100px;
+    font-size: 50px;
+}
+
+.main .textsoy{
+    position: relative;
+    top: 160px;
+    left: -120px;
+    font-size: 50px;   
+}
+
+.main .wrapper{
+    position: relative;
+    top: 160px;
+    left: -120px;
+    font-size: 50px;   
+}
+
+.wrapper .dynamic-txts .letracnfondo {
+	background-image: url(../img/fondoletra.gif);
+    background-size: cover;
+    background-attachment: fixed;
+	color: transparent; 
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+}
+
+/* .main .flexbox {
+    width: 100%;
+    height: 100%;
+  align-items: center;
+  display: flex;
+  
+  justify-content: center;
+  
+
+  background: #ffff99;
+  color: #333;
+} */
+
+.wrapper{
+    display: flex;
+  }
+  .wrapper .static-txt{
+    color: #fff; 
+    font-size: 60px;
+    font-weight: 400;
+  }
+  .wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden; 
+  }
+  .dynamic-txts li{
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 8s steps(3) infinite;
+  }
+  @keyframes slide {
+    100%{
+      top: -270px;
+    }
+  }
+
+  @media (max-width: 930px) {
+    .menu{
+        position: relative;
+    }
+
+    body{
+        margin-left: 0px;
+    }
+
+    .menu-collapsed{
+        width: 100%;
+        height: 50px;
+    }
+    
+    .menu-collapsed #header #title{
+        float: left;
+    }
+    
+    .menu-collapsed #header #menu-items .title, .menu-collapsed #profile #photo, .menu-collapsed #profile #name{
+        display: none;
+    }
+    
+    .menu-collapsed #header #menu-items{
+        display: none;
+    }
+
+    .menu-collapsed .item{
+        width: 100px;
+    }
+
+.body-expanded{
+    margin-left: 0px;
+}
+    .menu-expanded{
+        position: fixed;
+        width: 30%;
+        z-index: 3;
+    }
+
+    .menu-expanded #profile #photo{
+        display: none;        
+    }
+
+  }
